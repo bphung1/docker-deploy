@@ -19,28 +19,7 @@ services:
         condition: on-failure
         delay: 10s
         max_attempts: 8
-    ports:
-      - 9000:443
-    volumes:
-      - /c/Users/bphun/.aspnet/https:/https/
-    environment:
-      ASPNETCORE_Kestrel__Certificates__Default__Password: SomePassword
   theapi:
     image: ebookhubapi
     deploy:
       replicas: 2
-    volumes:
-      - /c/Users/bphun/.aspnet/https:/https/
-    environment:
-      ASPNETCORE_Kestrel__Certificates__Default__Password: SomePassword
-  visualizer:
-    image: dockersamples/visualizer
-    deploy:
-      replicas: 1
-      placement:
-        constraints:
-          - node.role == manager
-    ports:
-      - 8080:8080
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
