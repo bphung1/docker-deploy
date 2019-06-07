@@ -17,7 +17,7 @@ services:
           memory: 20M
       restart_policy:
         condition: on-failure
-        delay: 2000s
+        delay: 10s
         max_attempts: 8
   theapi:
     image: ebookhubapi
