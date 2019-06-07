@@ -26,6 +26,6 @@ services:
     environment:
       ASPNETCORE_Kestrel__Certificates__Default__Password: SomePassword
   theapi:
-    image: bphung1/ebookhubapi:api
+    image: bphung1/ebookhub:api
     deploy:
       replicas: 2
