@@ -19,12 +19,6 @@ services:
         condition: on-failure
         delay: 10s
         max_attempts: 8
-    ports:
-      - 9000:443
-    volumes:
-      - /c/Users/bphun/.aspnet/https:/https/
-    environment:
-      ASPNETCORE_Kestrel__Certificates__Default__Password: SomePassword
   theapi:
     image: bphung1/ebookhub:api
     deploy:
